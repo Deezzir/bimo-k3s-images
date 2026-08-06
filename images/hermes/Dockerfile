@@ -24,7 +24,7 @@ RUN apt-get update \
     && ocrmypdf --version \
     && pandoc --version \
     && pdftotext -v \
-    && python3 -c 'import openpyxl' \
+    && /usr/bin/python3 -c 'import openpyxl' \
     && 7z | head -n 1 \
     && unzip -v \
     && zip -v \
