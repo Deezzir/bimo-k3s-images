@@ -1,0 +1,10 @@
+{
+  "images": [
+    {
+      "name": "hermes",
+      "context": "images/hermes",
+      "dockerfile": "images/hermes/Dockerfile",
+      "image": "hermes"
+    }
+  ]
+}
