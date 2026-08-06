@@ -79,8 +79,15 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Compute image tags
+        id: tags
+        shell: bash
+        run: |
+          FLUX_TAG="main-$(git show -s --format=%ct "$GITHUB_SHA")-${GITHUB_SHA::7}"
+          echo "flux_tag=${FLUX_TAG}" >> "$GITHUB_OUTPUT"
+
       - name: Build and push multi-arch image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: ${{ matrix.context }}
           file: ${{ matrix.dockerfile }}
@@ -88,6 +95,6 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: |
             ghcr.io/deezzir/${{ matrix.image }}:latest
-            ghcr.io/deezzir/${{ matrix.image }}:sha-${{ github.sha }}
+            ghcr.io/deezzir/${{ matrix.image }}:${{ steps.tags.outputs.flux_tag }}
           cache-from: type=gha,scope=${{ matrix.name }}
           cache-to: type=gha,mode=max,scope=${{ matrix.name }}
