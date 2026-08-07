@@ -15,6 +15,7 @@ RUN apt-get update \
         python3-openpyxl \
         p7zip-full \
         unzip \
+        vim \
         zip \
     && curl -fsSLo /usr/local/bin/kubectl \
         "https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/$(dpkg --print-architecture)/kubectl" \
