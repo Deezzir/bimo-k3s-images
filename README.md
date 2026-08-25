@@ -6,7 +6,7 @@ Vendored container images for the Bimos k3s environment.
 
 | Image | Package | Purpose |
 | --- | --- | --- |
-| Hermes | `ghcr.io/deezzir/hermes` | Hermes Agent with Kubernetes, PDF, OCR, document conversion, spreadsheet, CSV, and archive tools. |
+| Hermes | `ghcr.io/deezzir/hermes` | Hermes Agent with Kubernetes, PDF, OCR, document conversion, spreadsheet, CSV, JSON (`jq`), YAML (`yq`), and archive tools. |
 
 `kubectl` availability does not grant Kubernetes access. Grant the deployment only the required permissions through its ServiceAccount and RBAC bindings.
 

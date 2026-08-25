@@ -9,6 +9,7 @@ RUN apt-get update \
         ca-certificates \
         curl \
         csvkit \
+        jq \
         ocrmypdf \
         pandoc \
         poppler-utils \
@@ -16,18 +17,21 @@ RUN apt-get update \
         p7zip-full \
         unzip \
         vim \
+        yq \
         zip \
     && curl -fsSLo /usr/local/bin/kubectl \
         "https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/$(dpkg --print-architecture)/kubectl" \
     && chmod 0755 /usr/local/bin/kubectl \
     && kubectl version --client \
     && csvcut --version \
+    && jq --version \
     && ocrmypdf --version \
     && pandoc --version \
     && pdftotext -v \
     && /usr/bin/python3 -c 'import openpyxl' \
     && 7z | head -n 1 \
     && unzip -v \
+    && yq --version \
     && zip -v \
     && rm -rf /var/lib/apt/lists/*
 
