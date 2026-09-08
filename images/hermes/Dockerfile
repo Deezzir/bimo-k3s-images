@@ -19,6 +19,18 @@ RUN apt-get update \
         vim \
         yq \
         zip \
+        tesseract-ocr-rus \
+        libreoffice-writer \
+        libreoffice-calc \
+        python3-docx \
+        python3-pypdf \
+        python3-reportlab \
+        fonts-dejavu-core \
+        fonts-liberation \
+        fonts-crosextra-carlito \
+        fonts-crosextra-caladea \
+        fontconfig \
+        tzdata \
     && curl -fsSLo /usr/local/bin/kubectl \
         "https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/$(dpkg --print-architecture)/kubectl" \
     && chmod 0755 /usr/local/bin/kubectl \
@@ -28,7 +40,11 @@ RUN apt-get update \
     && ocrmypdf --version \
     && pandoc --version \
     && pdftotext -v \
-    && /usr/bin/python3 -c 'import openpyxl' \
+    && /usr/bin/python3 -c 'import docx, openpyxl, pypdf, reportlab' \
+    && tesseract --list-langs \
+    && libreoffice --headless --version \
+    && fc-match Carlito \
+    && fc-match Caladea \
     && 7z | head -n 1 \
     && unzip -v \
     && yq --version \
