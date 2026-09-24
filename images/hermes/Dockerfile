@@ -1,4 +1,4 @@
-FROM nousresearch/hermes-agent:latest@sha256:f2152a2b9cdf3e3bb6bdd983d6890ab6c6817e1aba9b83cb19a38a8cd548825b
+FROM nousresearch/hermes-agent:latest@sha256:e6c7be5fca6e6b91f7693a2514705cd39e2a96d94544e1fe2f4dbef783a99acf
 
 USER root
 
