@@ -1,4 +1,4 @@
-FROM nvidia/cuda:13.0.2-runtime-ubuntu24.04
+FROM nvidia/cuda:13.5.0-runtime-ubuntu24.04@sha256:ba4d4e8475ced890fb26f9661daf8dae7cce9827613682eb8b8379c5ecd94eba
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 python3-venv git ca-certificates libgl1 libglib2.0-0 \
