@@ -1,7 +1,7 @@
 FROM nvidia/cuda:13.0.2-runtime-ubuntu24.04
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3 python3-venv git ca-certificates libgl1 libglib2.0-0 \
+    python3 python3-venv python3-dev gcc libc6-dev git ca-certificates libgl1 libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
 RUN python3 -m venv /venv
