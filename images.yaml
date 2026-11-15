@@ -5,6 +5,12 @@
       "context": "images/hermes",
       "dockerfile": "images/hermes/Dockerfile",
       "image": "hermes"
+    },
+    {
+      "name": "comfyui",
+      "context": "images/comfyui",
+      "dockerfile": "images/comfyui/Dockerfile",
+      "image": "comfyui"
     }
   ]
 }

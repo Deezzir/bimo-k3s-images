@@ -7,6 +7,7 @@ Vendored container images for the Bimos k3s environment.
 | Image | Package | Purpose |
 | --- | --- | --- |
 | Hermes | `ghcr.io/deezzir/hermes` | Hermes Agent with Kubernetes, PDF, OCR, document conversion, spreadsheet, CSV, JSON (`jq`), YAML (`yq`), and archive tools. |
+| ComfyUI | `ghcr.io/deezzir/comfyui` | ComfyUI with PyTorch CUDA 13 support for ARM64 and AMD64. |
 
 `kubectl` availability does not grant Kubernetes access. Grant the deployment only the required permissions through its ServiceAccount and RBAC bindings.
 
@@ -15,7 +16,7 @@ Vendored container images for the Bimos k3s environment.
 GitHub Actions publishes each changed image directory on pushes to `main` for `linux/amd64` and `linux/arm64`. Published images receive:
 
 - `ghcr.io/deezzir/<image>:latest`
-- `ghcr.io/deezzir/<image>:sha-<commit>`
+- `ghcr.io/deezzir/<image>:main-<commit-timestamp>-<short-sha>`
 
 Run the `Build And Push Images` workflow manually to publish `all` catalog images or a specific image name.
 
