@@ -11,6 +11,12 @@
       "context": "images/comfyui",
       "dockerfile": "images/comfyui/Dockerfile",
       "image": "comfyui"
+    },
+    {
+      "name": "actual-sync",
+      "context": "images/actual-sync",
+      "dockerfile": "images/actual-sync/Dockerfile",
+      "image": "actual-sync"
     }
   ]
 }

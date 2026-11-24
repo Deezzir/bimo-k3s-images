@@ -1,0 +1,16 @@
+{
+  "name": "actual-sync",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "build": "bun build src/sync.ts --target=node --packages=external --outfile=dist/sync.js"
+  },
+  "dependencies": {
+    "@actual-app/api": "26.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "typescript": "7.0.2"
+  }
+}
